@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="./Javascript.js"></script>
+    <title>Magasin de ventes de produits cosmetiques</title>
+</head>
+<body id="body">
+    <div class="global">
+        <div class="parent">
+            <form>
+            <div class="enfant">
+                <input type="text" id="nom" placeholder="Nom" onkeyup="validationNom()">
+                <span id="Vnom"></span>
+            </div>
+            <div class="enfant">
+                <input type="text" id="marque" placeholder="Marque" onkeyup="validationMarque()"> 
+                <span id="Vmarque"></span>
+            </div>
+            <div class="enfant">
+                <input type="text" id="prix" placeholder="Prix" onkeyup="validationPrix()">
+                <span id="Vprix"></span>   
+            </div>
+            <div class="enfant">
+                <label for="dateproduction">Date de production:</label>  
+                <input type="date" id="dateproduction" placeholder="Date de production" onchange="validationDate()">
+                <span id="Vdateproduction"></span> 
+            </div>
+            <div class="enfant">
+                <label for="promotion">Promotion:</label>
+                <div>
+                    <input type="radio" name="promotion" id="oui" value="En promotion" onchange="validationPromotion()">Oui
+                    <input type="radio" name="promotion" id="non" value="Sans promotion" onchange="validationPromotion()">Non 
+                </div>
+                <span id="Vpromotion"></span>
+            </div>
+            
+            <div class="enfant">
+                <label for="type">Type de produit:</label>
+                <select id="type" onchange="validationType()">
+                <option disabled selected>Veuillez selectionner ...</option>
+                <option>Hygiène et toilette</option>
+                <option>Soins esthétiques</option>
+                <option>Produits solaires</option>
+                <option>Beauté des mains et des pieds</option>
+                <option>Produits de maquillage</option>
+                <option>Entretien capillaires</option>
+                <option>Parfums</option>
+                </select> 
+                <span id="Vtype"></span>
+            </div>
+            <div class="enfant">
+                <button id="ajouter" onclick="valider(event)">Ajouter</button>
+            </div>
+        </form>
+        </div>
+    <div class="parent">
+        <table id="tableauG">
+          <tr>
+            <th>Nom</th>
+            <th>Marque</th>
+            <th>Prix</th>
+            <th>Date de production</th>
+            <th>Promotion</th>
+            <th>Type</th>
+            <th>Modification</th>
+          </tr>
+          <tbody id="tableau"></tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
